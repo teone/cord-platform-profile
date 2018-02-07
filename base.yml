@@ -35,16 +35,20 @@ use_maas: True
 xos_tosca_config_templates:
   - service-graph-constraints.yaml
   - xos-gui-extensions.yml
+  - services.yml
 
 enabled_gui_extensions: []
 
 # paths defined in manifest/default.xml
-xos_services: []
+# xos_services: []
+xos_services:
+  - name: templateservice
+    path: orchestration/xos_services/templateservice
 
 xos_dynamic_services: []
 
 # service graph gui constraints
-xos_gui_service_graph_constraints: '[]'
+xos_gui_service_graph_constraints: '["templateservice"]'
 
 # Juju config
 charm_versions:
